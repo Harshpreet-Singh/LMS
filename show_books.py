@@ -1,6 +1,12 @@
-from LMS.utils import books
+from utils import books
+
 def show():
-    if len(books)==0:   print("Book not available")
+    # agar koi book nahi hai
+    if not books:
+        print("No books available in library")
     else:
-        for _ in books:
-            print(_)
+        print("Available Books:")
+        
+        # saari books aur unki quantity dikhao
+        for book, quantity in books.items():
+            print(f"{book} (Quantity: {quantity})")
